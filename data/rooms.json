@@ -1,0 +1,34 @@
+[
+  {
+    "id": "R20A",
+    "name": "20평 A",
+    "type": "20P",
+    "capacityMin": 1,
+    "capacityMax": 4,
+    "priceText": "미정"
+  },
+  {
+    "id": "R20B",
+    "name": "20평 B",
+    "type": "20P",
+    "capacityMin": 1,
+    "capacityMax": 4,
+    "priceText": "미정"
+  },
+  {
+    "id": "R10A",
+    "name": "10평 A",
+    "type": "10P",
+    "capacityMin": 1,
+    "capacityMax": 2,
+    "priceText": "미정"
+  },
+  {
+    "id": "R10B",
+    "name": "10평 B",
+    "type": "10P",
+    "capacityMin": 1,
+    "capacityMax": 2,
+    "priceText": "미정"
+  }
+]
