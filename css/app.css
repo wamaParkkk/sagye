@@ -87,3 +87,217 @@ code {
     border-radius: 8px;
     padding: 16px;
 }
+
+/* Layout */
+:root {
+    --container: 1200px;
+    --header-h: 64px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Noto Sans KR,sans-serif;
+    color: #222
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 16px
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    height: var(--header-h);
+    display: flex;
+    align-items: center
+}
+
+.site-header .brand {
+    font-weight: 700;
+    font-size: 20px;
+    color: #111;
+    text-decoration: none;
+    margin-right: 16px
+}
+
+.top-nav {
+    display: flex;
+    gap: 18px
+}
+
+.top-nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 4px;
+    border-bottom: 2px solid transparent
+}
+
+.top-nav a.active {
+    border-color: #111
+}
+
+.hamburger {
+    display: none;
+    margin-left: auto;
+    font-size: 22px;
+    background: none;
+    border: 0
+}
+
+.content {
+    min-height: 60vh
+}
+
+.site-footer {
+    border-top: 1px solid #eee;
+    padding: 24px 0;
+    margin-top: 48px;
+    color: #666;
+    text-align: center
+}
+
+/* Responsive header */
+@media (max-width: 900px) {
+    .hamburger {
+        display: block
+    }
+
+    .top-nav {
+        position: absolute;
+        right: 16px;
+        top: var(--header-h);
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 10px 12px;
+        flex-direction: column;
+        display: none
+    }
+
+    .site-header.open .top-nav {
+        display: flex
+    }
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    overflow: hidden;
+    margin-top: 0
+}
+
+.slides {
+    display: flex;
+    transition: transform .6s ease
+}
+
+.slide {
+    min-width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    position: relative
+}
+
+@media (max-width: 900px) {
+    .slide {
+        height: 56vh
+    }
+}
+
+.slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25) 40%,rgba(0,0,0,.35))
+}
+
+.slide-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #fff;
+    padding: 0 20px
+}
+
+.slide-inner h2 {
+    font-size: 42px;
+    margin: 0 0 10px
+}
+
+.slide-inner p {
+    font-size: 18px;
+    margin: 0 0 18px;
+    opacity: .95
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background: #111;
+    color: #fff;
+    text-decoration: none
+}
+
+/* Slider controls */
+.slider .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,.7);
+    border: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer
+}
+
+.slider .prev {
+    left: 16px
+}
+
+.slider .next {
+    right: 16px
+}
+
+.dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 8px
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.6);
+    border: 0
+}
+
+.dot.active {
+    background: #fff
+}
+
+/* Sections */
+.pad {
+    padding: 40px 0
+}
